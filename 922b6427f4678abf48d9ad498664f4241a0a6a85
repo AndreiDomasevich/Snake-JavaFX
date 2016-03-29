@@ -1,0 +1,293 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9b358b_8e9cac6a",
+        "filename": "src/my_snake/Block.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-03-29T09:20:31Z",
+      "side": 1,
+      "message": "rework package name",
+      "revId": "922b6427f4678abf48d9ad498664f4241a0a6a85",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_6e884823",
+        "filename": "src/my_snake/Fon.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-03-29T09:20:31Z",
+      "side": 1,
+      "message": "code formating",
+      "revId": "922b6427f4678abf48d9ad498664f4241a0a6a85",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_0e877c10",
+        "filename": "src/my_snake/Fon.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-03-29T09:20:31Z",
+      "side": 1,
+      "message": "same as 18 line",
+      "revId": "922b6427f4678abf48d9ad498664f4241a0a6a85",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_ae76503c",
+        "filename": "src/my_snake/Main.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-03-29T09:20:31Z",
+      "side": 1,
+      "message": "admin of what ?",
+      "revId": "922b6427f4678abf48d9ad498664f4241a0a6a85",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_6e8f2824",
+        "filename": "src/my_snake/Main.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-03-29T09:20:31Z",
+      "side": 1,
+      "message": "All memory allocation and variables initialisation should be in class constructor.",
+      "revId": "922b6427f4678abf48d9ad498664f4241a0a6a85",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_eea3389d",
+        "filename": "src/my_snake/Main.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-03-29T09:20:31Z",
+      "side": 1,
+      "message": "If this program don\u0027t need code below, delete it. Also u can make function with @Deprecate annotation",
+      "revId": "922b6427f4678abf48d9ad498664f4241a0a6a85",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_6eb608de",
+        "filename": "src/my_snake/Main.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-03-29T09:20:31Z",
+      "side": 1,
+      "message": "Variable names.",
+      "revId": "922b6427f4678abf48d9ad498664f4241a0a6a85",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_2eb000dd",
+        "filename": "src/my_snake/Main.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-03-29T09:20:31Z",
+      "side": 1,
+      "message": "??????",
+      "revId": "922b6427f4678abf48d9ad498664f4241a0a6a85",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_0eb53ccc",
+        "filename": "src/my_snake/Menu.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-03-29T09:20:31Z",
+      "side": 1,
+      "message": "Code formating",
+      "revId": "922b6427f4678abf48d9ad498664f4241a0a6a85",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_eef8d87e",
+        "filename": "src/my_snake/Snake.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-03-29T09:20:31Z",
+      "side": 1,
+      "message": "Use NIO API for work with files, if it possible.",
+      "revId": "922b6427f4678abf48d9ad498664f4241a0a6a85",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_0eec1cc6",
+        "filename": "src/my_snake/Snake.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-03-29T09:20:31Z",
+      "side": 1,
+      "message": "Why so much variables? Make more then 1 class please.",
+      "revId": "922b6427f4678abf48d9ad498664f4241a0a6a85",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_aedbf01a",
+        "filename": "src/my_snake/Snake.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-03-29T09:20:31Z",
+      "side": 1,
+      "message": "Hardly recommended use function less or equal 50 lines.",
+      "revId": "922b6427f4678abf48d9ad498664f4241a0a6a85",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_4ee224d7",
+        "filename": "src/my_snake/Snake.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-03-29T09:20:31Z",
+      "side": 1,
+      "message": "Note readable code.",
+      "revId": "922b6427f4678abf48d9ad498664f4241a0a6a85",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_0e03fc74",
+        "filename": "src/my_snake/Snake.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-03-29T09:20:31Z",
+      "side": 1,
+      "message": "???",
+      "revId": "922b6427f4678abf48d9ad498664f4241a0a6a85",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_4e090495",
+        "filename": "src/my_snake/Snake.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 486,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-03-29T09:20:31Z",
+      "side": 1,
+      "message": "OH, GOOOD, WHY ?????",
+      "revId": "922b6427f4678abf48d9ad498664f4241a0a6a85",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_2efec06b",
+        "filename": "src/my_snake/Snake.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 518,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-03-29T09:20:31Z",
+      "side": 1,
+      "message": "Same, make functions if it possible!!!!!!!",
+      "revId": "922b6427f4678abf48d9ad498664f4241a0a6a85",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_aec41040",
+        "filename": "src/my_snake/gameover.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-03-29T09:20:31Z",
+      "side": 1,
+      "message": "formating, add white spaces between args in functions.",
+      "revId": "922b6427f4678abf48d9ad498664f4241a0a6a85",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
