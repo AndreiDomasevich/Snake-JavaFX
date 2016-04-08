@@ -1,6 +1,5 @@
 package my_snake;
 
-
 import javafx.application.Platform;
 import javafx.geometry.Orientation;
 import javafx.scene.Group;
@@ -14,14 +13,14 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
-
-import java.io.*;
-import java.util.*;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+
+import java.io.*;
+import java.util.*;
 
 public class Snake {
     private Group group;
@@ -33,7 +32,11 @@ public class Snake {
     private Rectangle regimeRectangle;
     private Rectangle obstacle1;
     private Rectangle obstacle2;
-    private int feedX, feedY, regimeX, regimeY, obstacle1X, obstacle1Y, obstacle2X, obstacle2Y;
+    private Rectangle obstacle3;
+    private Rectangle obstacle4;
+    private Rectangle obstacle5;
+    private int feedX, feedY, regimeX, regimeY, obstacle1X, obstacle1Y, obstacle2X, obstacle2Y, 
+            obstacle3X, obstacle3Y, obstacle4X, obstacle4Y, obstacle5X, obstacle5Y;
     private int feedCounter1 = 0;
     private int feedCounter2 = 0;
     private long currentTime;
@@ -56,7 +59,7 @@ public class Snake {
     private Label scoreLabel;
     private int score = 0;
     private Timer timer;
-
+int k=0;
     public Snake(String playerName, String inputDirection, Scene scene, Group group) {
         this.playerName = playerName;
         this.scene = scene;
@@ -136,6 +139,21 @@ public class Snake {
         obstacle2.setFill(Color.BLUE);
         obstacle2.setX(-20);
         group.getChildren().add(obstacle2);
+        
+        obstacle3 = new Rectangle(150, 10);
+        obstacle3.setFill(Color.BLUE);
+        obstacle3.setY(-20);
+        group.getChildren().add(obstacle3);
+        
+        obstacle4 = new Rectangle(10, 150);
+        obstacle4.setFill(Color.BLUE);
+        obstacle4.setX(-20);
+        group.getChildren().add(obstacle4);
+        
+        obstacle5 = new Rectangle(150, 10);
+        obstacle5.setFill(Color.BLUE);
+        obstacle5.setY(-20);
+        group.getChildren().add(obstacle5);
 
         setBestPlayer();
         setBoardListener();
@@ -156,7 +174,7 @@ public class Snake {
 
         try {
             BufferedReader br = new BufferedReader(new FileReader(new File
-			("C:\\Users\\Admin\\Documents\\NetBeansProjects\\My_Snake\\src\\my_snake\\best.txt"))); // you may need to change this
+			("C:\\Users\\Admin\\Documents\\NetBeansProjects\\My_Snake\\src\\my_snake\\best.txt"))); 
             String nameTemp = br.readLine();
             String scoreTemp = br.readLine();
 
@@ -192,7 +210,7 @@ public class Snake {
             reloadGame();
         if (isEnd|| isPause)
             return;
-
+        
         addFeed();
         doesEatFeed();
         addRegime();
@@ -206,10 +224,6 @@ public class Snake {
 
         if (isEnd(newHead)) {
             isEnd = true;
-//            Image image = new Image(this.getClass().getResourceAsStream("/gameOver.png"));
-//            ImageView imageView = new ImageView(image);
-//            group.getChildren().add(imageView);
-//            scene.setOnKeyPressed(null);
             saveRecord();
             showRecord();
             Stage stage4 = new Stage();
@@ -222,7 +236,7 @@ grid4.setPadding(new Insets(25, 25, 25, 25));
 Text scenetitle4 = new Text("GAME OVER");
 scenetitle4.setId("game_over-text");
 grid4.add(scenetitle4, 0, 0, 2, 1);
-                   Scene scene4 = new Scene(grid4, 300, 275);
+Scene scene4 = new Scene(grid4, 300, 275);
 stage4.setScene(scene4);
 scene4.getStylesheets().add
  (Main.class.getResource("gameover.css").toExternalForm());
@@ -359,6 +373,21 @@ stage4.setOnCloseRequest(event -> {
                 (newHead.getX() >= obstacle2.getX()&& newHead.getX() <= obstacle2.getX() + 5)||
                 (newHead.getX() <= obstacle2.getX()&& newHead.getX() >= obstacle2.getX() - 5)))
             return true;
+        
+        if (newHead.getX() >= obstacle3.getX()&& newHead.getX() <= obstacle3.getX() + 150&&(
+                (newHead.getY() >= obstacle3.getY()&& newHead.getY() <= obstacle3.getY() + 5)||
+                (newHead.getY() <= obstacle3.getY()&& newHead.getY() >= obstacle3.getY() - 5)))
+            return true;
+        
+        if (newHead.getY() >= obstacle4.getY()&& newHead.getY() <= obstacle4.getY() + 150&&(
+                (newHead.getX() >= obstacle4.getX()&& newHead.getX() <= obstacle4.getX() + 5)||
+                (newHead.getX() <= obstacle4.getX()&& newHead.getX() >= obstacle4.getX() - 5)))
+            return true;
+        
+        if (newHead.getX() >= obstacle5.getX()&& newHead.getX() <= obstacle5.getX() + 150&&(
+                (newHead.getY() >= obstacle5.getY()&& newHead.getY() <= obstacle5.getY() + 5)||
+                (newHead.getY() <= obstacle5.getY()&& newHead.getY() >= obstacle5.getY() - 5)))
+            return true;
 
         return false;
     }
@@ -466,8 +495,8 @@ stage4.setOnCloseRequest(event -> {
         feedRectangle.setY(feedY);
 
         isFeed = true;
-
-        addObstacle();
+        if(k==0)
+        {addObstacle();k=1;}
     }
 
     private void addObstacle() {
@@ -482,31 +511,74 @@ stage4.setOnCloseRequest(event -> {
         obstacle1X = Math.abs(random.nextInt()) % 400 + 10;
         obstacle1Y = Math.abs(random.nextInt()) % 400 + 10;
 
-        for (int i = 0; i < blockTemp.size(); i++)
-            if (((blockTemp.get(i).getX() < obstacle1X + 150&& blockTemp.get(i).getY() < obstacle1Y + 150)||
-		(blockTemp.get(i).getX() > obstacle1X + 150&& blockTemp.get(i).getY() > obstacle1Y + 150))&&
-                    (feedRectangle.getX() < obstacle1X&& feedRectangle.getY() < obstacle1Y)||
-					(feedRectangle.getX() + 20 > obstacle1X&& feedRectangle.getY() + 20 > obstacle1Y)) {
-                obstacle1X = Math.abs(random.nextInt()) % 400 + 10;
-                obstacle1Y = Math.abs(random.nextInt()) % 400 + 10;
-            }
+//        for (int i = 0; i < blockTemp.size(); i++)
+//            if (((blockTemp.get(i).getX() < obstacle1X + 150&& blockTemp.get(i).getY() < obstacle1Y + 150)||
+//		(blockTemp.get(i).getX() > obstacle1X + 150&& blockTemp.get(i).getY() > obstacle1Y + 150))&&
+//                    (feedRectangle.getX() < obstacle1X&& feedRectangle.getY() < obstacle1Y)||
+//					(feedRectangle.getX() + 20 > obstacle1X&& feedRectangle.getY() + 20 > obstacle1Y)) {
+//                obstacle1X = Math.abs(random.nextInt()) % 400 + 10;
+//                obstacle1Y = Math.abs(random.nextInt()) % 400 + 10;
+//            }
 
         obstacle2X = Math.abs(random.nextInt()) % 400 + 10;
         obstacle2Y = Math.abs(random.nextInt()) % 400 + 10;
 
-        for (int i = 0; i < blockTemp.size(); i++)
-            if (((blockTemp.get(i).getX() < obstacle2X + 150&& blockTemp.get(i).getY() < obstacle2Y + 150) ||
-		(blockTemp.get(i).getX() > obstacle2X + 150&& blockTemp.get(i).getY() > obstacle2Y + 150)) &&
-                    (feedRectangle.getX() < obstacle2X - 10&& feedRectangle.getY() < obstacle2Y)||
-					(feedRectangle.getX() + 20 > obstacle2X&& feedRectangle.getY() + 20 > obstacle2Y)) {
-                obstacle2X = Math.abs(random.nextInt()) % 400 + 10;
-                obstacle2Y = Math.abs(random.nextInt()) % 400 + 10;
-            }
+//        for (int i = 0; i < blockTemp.size(); i++)
+//            if (((blockTemp.get(i).getX() < obstacle2X + 150&& blockTemp.get(i).getY() < obstacle2Y + 150) ||
+//		(blockTemp.get(i).getX() > obstacle2X + 150&& blockTemp.get(i).getY() > obstacle2Y + 150)) &&
+//                    (feedRectangle.getX() < obstacle2X - 10&& feedRectangle.getY() < obstacle2Y)||
+//					(feedRectangle.getX() + 20 > obstacle2X&& feedRectangle.getY() + 20 > obstacle2Y)) {
+//                obstacle2X = Math.abs(random.nextInt()) % 400 + 10;
+//                obstacle2Y = Math.abs(random.nextInt()) % 400 + 10;
+//            }
+        
+        
+        obstacle3X = Math.abs(random.nextInt()) % 400 + 10;
+        obstacle3Y = Math.abs(random.nextInt()) % 400 + 10;
+
+//        for (int i = 0; i < blockTemp.size(); i++)
+//            if (((blockTemp.get(i).getX() < obstacle3X + 150&& blockTemp.get(i).getY() < obstacle3Y + 150)||
+//		(blockTemp.get(i).getX() > obstacle3X + 150&& blockTemp.get(i).getY() > obstacle3Y + 150))&&
+//                    (feedRectangle.getX() < obstacle3X&& feedRectangle.getY() < obstacle3Y)||
+//					(feedRectangle.getX() + 20 > obstacle3X&& feedRectangle.getY() + 20 > obstacle1Y)) {
+//                obstacle3X = Math.abs(random.nextInt()) % 400 + 10;
+//                obstacle3Y = Math.abs(random.nextInt()) % 400 + 10;
+//            }
+        
+        obstacle4X = Math.abs(random.nextInt()) % 400 + 10;
+        obstacle4Y = Math.abs(random.nextInt()) % 400 + 10;
+
+//        for (int i = 0; i < blockTemp.size(); i++)
+//            if (((blockTemp.get(i).getX() < obstacle4X + 150&& blockTemp.get(i).getY() < obstacle4Y + 150)||
+//		(blockTemp.get(i).getX() > obstacle4X + 150&& blockTemp.get(i).getY() > obstacle4Y + 150))&&
+//                    (feedRectangle.getX() < obstacle4X&& feedRectangle.getY() < obstacle4Y)||
+//					(feedRectangle.getX() + 20 > obstacle4X&& feedRectangle.getY() + 20 > obstacle1Y)) {
+//                obstacle4X = Math.abs(random.nextInt()) % 400 + 10;
+//                obstacle4Y = Math.abs(random.nextInt()) % 400 + 10;
+//            }
+        
+        obstacle5X = Math.abs(random.nextInt()) % 400 + 10;
+        obstacle5Y = Math.abs(random.nextInt()) % 400 + 10;
+
+//        for (int i = 0; i < blockTemp.size(); i++)
+//            if (((blockTemp.get(i).getX() < obstacle5X + 150&& blockTemp.get(i).getY() < obstacle5Y + 150)||
+//		(blockTemp.get(i).getX() > obstacle5X + 150&& blockTemp.get(i).getY() > obstacle5Y + 150))&&
+//                    (feedRectangle.getX() < obstacle5X&& feedRectangle.getY() < obstacle5Y)||
+//					(feedRectangle.getX() + 20 > obstacle5X&& feedRectangle.getY() + 20 > obstacle1Y)) {
+//                obstacle5X = Math.abs(random.nextInt()) % 400 + 10;
+//                obstacle5Y = Math.abs(random.nextInt()) % 400 + 10;
+//            }
 
         obstacle1.setX(obstacle1X);
         obstacle1.setY(obstacle1Y);
         obstacle2.setX(obstacle2X);
         obstacle2.setY(obstacle2Y);
+        obstacle3.setX(obstacle3X);
+        obstacle3.setY(obstacle3Y);
+        obstacle4.setX(obstacle4X);
+        obstacle4.setY(obstacle4Y);
+        obstacle5.setX(obstacle5X);
+        obstacle5.setY(obstacle5Y);
     }
 
     private void setBoardListener() {
