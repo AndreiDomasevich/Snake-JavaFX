@@ -1,0 +1,489 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_2d5a4884",
+        "filename": "src/my_snake/Fon.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-04-09T10:25:22Z",
+      "side": 1,
+      "message": "code formating",
+      "revId": "aa2f78b38e2a4f8822893b68668dcdac6d3d3f05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_0d5f8473",
+        "filename": "src/my_snake/Main.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-04-09T10:25:22Z",
+      "side": 1,
+      "message": "All memory allocation should be in the class constructor, don\u0027t fixed from last review!",
+      "revId": "aa2f78b38e2a4f8822893b68668dcdac6d3d3f05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_ed546055",
+        "filename": "src/my_snake/Main.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-04-09T10:25:22Z",
+      "side": 1,
+      "message": "same as line below",
+      "range": {
+        "startLine": 23,
+        "startChar": 22,
+        "endLine": 23,
+        "endChar": 39
+      },
+      "revId": "aa2f78b38e2a4f8822893b68668dcdac6d3d3f05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_ad4e58bf",
+        "filename": "src/my_snake/Main.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-04-09T10:25:22Z",
+      "side": 1,
+      "message": "It\u0027s label1 or labe11? Still don\u0027t fixed from last review! \nRename variables.",
+      "range": {
+        "startLine": 31,
+        "startChar": 14,
+        "endLine": 31,
+        "endChar": 20
+      },
+      "revId": "aa2f78b38e2a4f8822893b68668dcdac6d3d3f05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_cd519c64",
+        "filename": "src/my_snake/Main.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-04-09T10:25:22Z",
+      "side": 1,
+      "message": "What is it? Are this code really need whitespaces here?",
+      "range": {
+        "startLine": 37,
+        "startChar": 33,
+        "endLine": 37,
+        "endChar": 64
+      },
+      "revId": "aa2f78b38e2a4f8822893b68668dcdac6d3d3f05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_8d4b94b0",
+        "filename": "src/my_snake/Main.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-04-09T10:25:22Z",
+      "side": 1,
+      "message": "Formating",
+      "revId": "aa2f78b38e2a4f8822893b68668dcdac6d3d3f05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_6dc73013",
+        "filename": "src/my_snake/Main.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-04-09T10:25:22Z",
+      "side": 1,
+      "message": "Still use 3-lines if... Make method boolean isMoveKeyPressed() or smth.",
+      "revId": "aa2f78b38e2a4f8822893b68668dcdac6d3d3f05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_4dcc6c35",
+        "filename": "src/my_snake/Main.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-04-09T10:25:22Z",
+      "side": 1,
+      "message": "hbBtn3 ?!",
+      "revId": "aa2f78b38e2a4f8822893b68668dcdac6d3d3f05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_2dd128ce",
+        "filename": "src/my_snake/Menu.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-04-09T10:25:22Z",
+      "side": 1,
+      "message": "should be:\n(Gaussian, rgba(255, 255, 255, 0.5), 0, 0, 0, 1);",
+      "range": {
+        "startLine": 8,
+        "startChar": 27,
+        "endLine": 8,
+        "endChar": 71
+      },
+      "revId": "aa2f78b38e2a4f8822893b68668dcdac6d3d3f05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_0dd664c5",
+        "filename": "src/my_snake/Snake.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-04-09T10:25:22Z",
+      "side": 1,
+      "message": "use NIO library if it possible",
+      "range": {
+        "startLine": 22,
+        "startChar": 7,
+        "endLine": 22,
+        "endChar": 15
+      },
+      "revId": "aa2f78b38e2a4f8822893b68668dcdac6d3d3f05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_eddb40ec",
+        "filename": "src/my_snake/Snake.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-04-09T10:25:22Z",
+      "side": 1,
+      "message": "You can make an array of obstacles.",
+      "revId": "aa2f78b38e2a4f8822893b68668dcdac6d3d3f05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_cdd87cf2",
+        "filename": "src/my_snake/Snake.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-04-09T10:25:22Z",
+      "side": 1,
+      "message": "Variable names, names1, names2, ...... names over9999",
+      "revId": "aa2f78b38e2a4f8822893b68668dcdac6d3d3f05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_ade538a9",
+        "filename": "src/my_snake/Snake.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-04-09T10:25:22Z",
+      "side": 1,
+      "message": "Not readable",
+      "revId": "aa2f78b38e2a4f8822893b68668dcdac6d3d3f05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_8de2749e",
+        "filename": "src/my_snake/Snake.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-04-09T10:25:22Z",
+      "side": 1,
+      "message": "printStackTrace() ... make dialog window with descripted problem, example:\nAlert alert \u003d new Alert(AlertType.ERROR);\n\talert.setTitle(\"Error Dialog\");\n\talert.setHeaderText(\"It seems something went wrong...\");",
+      "revId": "aa2f78b38e2a4f8822893b68668dcdac6d3d3f05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_4df34c74",
+        "filename": "src/my_snake/Snake.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-04-09T10:25:22Z",
+      "side": 1,
+      "message": "nice code formatting, does it google style? or maybe oracle?",
+      "range": {
+        "startLine": 230,
+        "startChar": 1,
+        "endLine": 246,
+        "endChar": 3
+      },
+      "revId": "aa2f78b38e2a4f8822893b68668dcdac6d3d3f05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_cdff5c33",
+        "filename": "src/my_snake/Snake.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-04-09T10:25:22Z",
+      "side": 1,
+      "message": "VEEEEEEEEEEERRRRRYYYYYY LOOOOOONNNNNNGGGGG LLLLIIINNNNEEEE",
+      "revId": "aa2f78b38e2a4f8822893b68668dcdac6d3d3f05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_2de8087c",
+        "filename": "src/my_snake/Snake.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-04-09T10:25:22Z",
+      "side": 1,
+      "message": ".....",
+      "revId": "aa2f78b38e2a4f8822893b68668dcdac6d3d3f05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_adfc183f",
+        "filename": "src/my_snake/Snake.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 499,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-04-09T10:25:22Z",
+      "side": 1,
+      "message": "Formating",
+      "range": {
+        "startLine": 498,
+        "startChar": 6,
+        "endLine": 499,
+        "endChar": 28
+      },
+      "revId": "aa2f78b38e2a4f8822893b68668dcdac6d3d3f05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_8df95450",
+        "filename": "src/my_snake/Snake.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 521,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-04-09T10:25:22Z",
+      "side": 1,
+      "message": "Delete it, if not using",
+      "range": {
+        "startLine": 514,
+        "startChar": 5,
+        "endLine": 521,
+        "endChar": 15
+      },
+      "revId": "aa2f78b38e2a4f8822893b68668dcdac6d3d3f05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_ed8900cc",
+        "filename": "src/my_snake/Snake.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 533,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-04-09T10:25:22Z",
+      "side": 1,
+      "message": "same",
+      "range": {
+        "startLine": 526,
+        "startChar": 0,
+        "endLine": 533,
+        "endChar": 14
+      },
+      "revId": "aa2f78b38e2a4f8822893b68668dcdac6d3d3f05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_cdad1c33",
+        "filename": "src/my_snake/Snake.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 581,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-04-09T10:25:22Z",
+      "side": 1,
+      "message": "obstacle1\nobstacle2\n........\nobstacle999",
+      "range": {
+        "startLine": 571,
+        "startChar": 0,
+        "endLine": 581,
+        "endChar": 35
+      },
+      "revId": "aa2f78b38e2a4f8822893b68668dcdac6d3d3f05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_6d63b01b",
+        "filename": "src/my_snake/Snake.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 590,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-04-09T10:25:22Z",
+      "side": 1,
+      "message": "New record! 4 lines if :)",
+      "revId": "aa2f78b38e2a4f8822893b68668dcdac6d3d3f05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_4d68ecf5",
+        "filename": "src/my_snake/best.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-04-09T10:25:22Z",
+      "side": 1,
+      "message": "Don\u0027t push files with trash in repository",
+      "revId": "aa2f78b38e2a4f8822893b68668dcdac6d3d3f05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_2d6da804",
+        "filename": "src/my_snake/gameover.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-04-09T10:25:22Z",
+      "side": 1,
+      "message": "formating",
+      "revId": "aa2f78b38e2a4f8822893b68668dcdac6d3d3f05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_0d72e4e5",
+        "filename": "src/my_snake/gameover.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1007575
+      },
+      "writtenOn": "2016-04-09T10:25:22Z",
+      "side": 1,
+      "message": "formating",
+      "revId": "aa2f78b38e2a4f8822893b68668dcdac6d3d3f05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
