@@ -19,28 +19,59 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-        Group group = new Group();
-        Scene scene = new Scene(group);
-        Stage stage1 = new Stage();
-        Stage stage = new Stage();
-        VBox vBox = new VBox();
-        HBox hBox = new HBox();
-        HBox hBox2 = new HBox();
-        Scene scene1 = new Scene(vBox);
-        Label label = new Label("Name:                            ");
-        Label label1 = new Label("Direction (W-A-S-D):     ");
-        TextField textField = new TextField();
-        TextField textField1 = new TextField();
-        Button button = new Button("OK");
-        GridPane grid = new GridPane();
-        Text scenetitle = new Text("Snake");
-        Button btn = new Button("              Game             ");
-        HBox hbBtn = new HBox(10);
-        Button btn3 = new Button("               Exit               ");
-        Scene scene2 = new Scene(grid, 300, 275);
-HBox hbBtn3 = new HBox(10);
+        Group group;
+    	Scene scene;
+    	Stage stage1;
+    	Stage stage;
+    	VBox vBox;
+    	HBox hBox;
+    	HBox hBox2;
+    	Scene scene1;
+    	Label name; 
+    	Label direction;
+   	TextField textField;
+   	TextField textField1;
+  	Button button;
+    	GridPane grid;
+        Text scenetitle;
+    	Button btn;
+    	HBox hbBtn;
+    	Button btn2;
+    	HBox hbBtn2;
+    	Button btn1;
+    	Scene scene2;
+    	HBox hbBtn1;
+
+    public Main(){
+
+         group = new Group();
+         scene = new Scene(group);
+         stage1 = new Stage();
+         stage = new Stage();
+         vBox = new VBox();
+         hBox = new HBox();
+         hBox2 = new HBox();
+         scene1 = new Scene(vBox, 380, 160);
+         name = new Label("Name:                            ");
+         direction = new Label("Direction (W-A-S-D):     ");
+         textField = new TextField();
+         textField1 = new TextField();
+         button = new Button ("        Easy        ");
+         button1 = new Button("      Normal      ");
+         button2 = new Button("        Hard        ");
+         grid = new GridPane();
+         scenetitle = new Text("Snake");
+         btn = new Button("              Game             ");
+         hbBtn = new HBox(10);
+         btn2 = new Button("         Auto Game        ");
+         hbBtn2 = new HBox(10);
+         btn1 = new Button("               Exit               ");
+         scene2 = new Scene(grid, 300, 275);
+         hbBtn1 = new HBox(10); 
+    }
+
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage){
         
         stage1.setScene(scene);
         stage1.setResizable(false);
@@ -58,10 +89,10 @@ HBox hbBtn3 = new HBox(10);
         vBox.getChildren().addAll(hBox, new Separator(), hBox2, new Separator(), button);
 
         button.setOnAction(e -> {
-            if (textField.getText() != null&& textField1.getText() != null&&
-                    (textField1.getText().equals("w")|| textField1.getText().equals("a")||
-                    textField1.getText().equals("s")|| textField1.getText().equals("d"))) 
-            {
+            if (textField.getText() != null && textField1.getText() != null &&
+               (textField1.getText().equals("w") || textField1.getText().equals("a") ||
+                textField1.getText().equals("s") || textField1.getText().equals("d"))) {
+
                 stage.close();
                 e.consume();
                 stage1.setScene(scene);
@@ -84,8 +115,7 @@ HBox hbBtn3 = new HBox(10);
         hbBtn.getChildren().add(btn);
         grid.add(hbBtn, 1, 2);
         btn.setOnAction(new EventHandler<ActionEvent>() {
-	    public void handle(ActionEvent event) 
-            {   
+	    public void handle(ActionEvent event) {   
                 primaryStage.close();
 		scene1.getStylesheets().add
                 (Main.class.getResource("Menu.css").toExternalForm());
@@ -97,8 +127,7 @@ HBox hbBtn3 = new HBox(10);
         hbBtn3.getChildren().add(btn3);
         grid.add(hbBtn3, 1, 4);
         btn3.setOnAction(new EventHandler<ActionEvent>() {
-	    public void handle(ActionEvent event) 
-            {   
+	    public void handle(ActionEvent event) {   
                 System.exit(0);
 	    }
 	});

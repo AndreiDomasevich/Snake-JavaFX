@@ -30,13 +30,8 @@ public class Snake {
     private Deque<Rectangle> rectangles;
     private Rectangle feedRectangle;
     private Rectangle regimeRectangle;
-    private Rectangle obstacle1;
-    private Rectangle obstacle2;
-    private Rectangle obstacle3;
-    private Rectangle obstacle4;
-    private Rectangle obstacle5;
-    private int feedX, feedY, regimeX, regimeY, obstacle1X, obstacle1Y, obstacle2X, obstacle2Y, 
-            obstacle3X, obstacle3Y, obstacle4X, obstacle4Y, obstacle5X, obstacle5Y;
+    private int feedX, feedY, regimeX, regimeY; 
+    private int[] obstacle_X, obstacle_Y;         
     private int feedCounter1 = 0;
     private int feedCounter2 = 0;
     private long currentTime;
@@ -59,8 +54,11 @@ public class Snake {
     private Label scoreLabel;
     private int score = 0;
     private Timer timer;
-int k=0;
-    public Snake(String playerName, String inputDirection, Scene scene, Group group) {
+    int k=0;
+    public Snake(String playerName, String inputDirection, Scene scene, Group group, int a, int n, int m) {
+        obstacle = new Rectangle[m+n];
+        obstacle_X = new int[m+n];
+        obstacle_Y = new int[m+n];
         this.playerName = playerName;
         this.scene = scene;
         this.group = group;
@@ -130,30 +128,20 @@ int k=0;
         regimeRectangle.setX(-20);
         group.getChildren().add(regimeRectangle);
 
-        obstacle1 = new Rectangle(150, 10);
-        obstacle1.setFill(Color.BLUE);
-        obstacle1.setY(-20);
-        group.getChildren().add(obstacle1);
-
-        obstacle2 = new Rectangle(10, 150);
-        obstacle2.setFill(Color.BLUE);
-        obstacle2.setX(-20);
-        group.getChildren().add(obstacle2);
-        
-        obstacle3 = new Rectangle(150, 10);
-        obstacle3.setFill(Color.BLUE);
-        obstacle3.setY(-20);
-        group.getChildren().add(obstacle3);
-        
-        obstacle4 = new Rectangle(10, 150);
-        obstacle4.setFill(Color.BLUE);
-        obstacle4.setX(-20);
-        group.getChildren().add(obstacle4);
-        
-        obstacle5 = new Rectangle(150, 10);
-        obstacle5.setFill(Color.BLUE);
-        obstacle5.setY(-20);
-        group.getChildren().add(obstacle5);
+        for(int i = 0; i < m; i++)
+        {
+            obstacle[i] = new Rectangle(150, 10);
+            obstacle[i].setFill(Color.CHOCOLATE);
+            obstacle[i].setY(-20);
+            group.getChildren().add(obstacle[i]);
+        }
+        for(int i = m; i < m+n; i++)
+        {
+            obstacle[i] = new Rectangle(10, 150);
+            obstacle[i].setFill(Color.CHOCOLATE);
+            obstacle[i].setY(-20);
+            group.getChildren().add(obstacle[i]);
+        }
 
         setBestPlayer();
         setBoardListener();
@@ -207,11 +195,11 @@ int k=0;
 
     private void play() {
         if (isReload)
-            reloadGame();
+            reloadGame(n, m);
         if (isEnd|| isPause)
             return;
         
-        addFeed();
+        addFeed(n, m);
         doesEatFeed();
         addRegime();
         doesEatRegime();
@@ -222,28 +210,28 @@ int k=0;
         Block newHead = new Block(head.getX() + dx[inputDirection], head.getY() + dy[inputDirection]);
         Rectangle headRect = new Rectangle(head.getX(), head.getY(), 10, 10);
 
-        if (isEnd(newHead)) {
+        if (isEnd(newHead, n, m)) {
             isEnd = true;
             saveRecord();
             showRecord();
             Stage stage4 = new Stage();
-       stage4.setTitle("Snake");
- GridPane grid4 = new GridPane();
-grid4.setAlignment(Pos.CENTER);
-grid4.setHgap(10);
-grid4.setVgap(10);
-grid4.setPadding(new Insets(25, 25, 25, 25));
-Text scenetitle4 = new Text("GAME OVER");
-scenetitle4.setId("game_over-text");
-grid4.add(scenetitle4, 0, 0, 2, 1);
-Scene scene4 = new Scene(grid4, 300, 275);
-stage4.setScene(scene4);
-scene4.getStylesheets().add
- (Main.class.getResource("gameover.css").toExternalForm());
-stage4.show();
-stage4.setOnCloseRequest(event -> {
-    System.exit(0);
-});
+       	    stage4.setTitle("Snake");
+ 	    GridPane grid4 = new GridPane();
+            grid4.setAlignment(Pos.CENTER);
+            grid4.setHgap(10);
+            grid4.setVgap(10);
+            grid4.setPadding(new Insets(25, 25, 25, 25));
+	    Text scenetitle4 = new Text("GAME OVER");
+	    scenetitle4.setId("game_over-text");
+	    grid4.add(scenetitle4, 0, 0, 2, 1);
+	    Scene scene4 = new Scene(grid4, 300, 275);
+	    stage4.setScene(scene4);
+	    scene4.getStylesheets().add
+ 	    (Main.class.getResource("gameover.css").toExternalForm());
+            stage4.show();
+	    stage4.setOnCloseRequest(event -> {
+    	    System.exit(0);
+	    });
             return;
         }
         else {
@@ -254,10 +242,10 @@ stage4.setOnCloseRequest(event -> {
 
             updateGui();
         }
-
+ 
     }
 
-    private void reloadGame() {
+    private void reloadGame(int n, int m) {
         if (!isReload)
             return;
 
@@ -285,7 +273,8 @@ stage4.setOnCloseRequest(event -> {
 
             rectanglesTemp.push(new Rectangle(tale.getX(), tale.getY(), 10, 10));
             rectanglesTemp.push(new Rectangle(head.getX(), head.getY(), 10, 10));
-        } else {
+        } 
+	else {
             blocksTemp.push(head);
             blocksTemp.push(tale);
 
@@ -328,7 +317,7 @@ stage4.setOnCloseRequest(event -> {
     private void saveRecord() {
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter
-			("C:\\Users\\Admin\\Documents\\NetBeansProjects\\My_Snake\\src\\my_snake\\best.txt", true)); // you may need to change this also :)
+			("C:\\Users\\Admin\\Documents\\NetBeansProjects\\My_Snake\\src\\my_snake\\best.txt", true));
 
             bw.write(playerName);
             bw.newLine();
@@ -357,41 +346,30 @@ stage4.setOnCloseRequest(event -> {
         }
     }
 
-    private boolean isEnd(Block newHead) {
+   private boolean isEnd(Block newHead, int n, int m) {
         List<Block> blockTemp = new ArrayList<>(blocks);
 
         for (int i = 0; i < blockTemp.size(); i++)
             if (blockTemp.get(i).getX() == newHead.getX()&& blockTemp.get(i).getY() == newHead.getY())
                 return true;
 
-        if (newHead.getX() >= obstacle1.getX()&& newHead.getX() <= obstacle1.getX() + 150&&(
-                (newHead.getY() >= obstacle1.getY()&& newHead.getY() <= obstacle1.getY() + 5)||
-                (newHead.getY() <= obstacle1.getY()&& newHead.getY() >= obstacle1.getY() - 5)))
+        for (int i = 0; i < m; i++)
+        {
+        if (newHead.getX() >= obstacle[i].getX()&& newHead.getX() <= obstacle[i].getX() + 150&&(
+                (newHead.getY() >= obstacle[i].getY()&& newHead.getY() <= obstacle[i].getY() + 5)||
+                (newHead.getY() <= obstacle[i].getY()&& newHead.getY() >= obstacle[i].getY() - 5)))
             return true;
-
-        if (newHead.getY() >= obstacle2.getY()&& newHead.getY() <= obstacle2.getY() + 150&&(
-                (newHead.getX() >= obstacle2.getX()&& newHead.getX() <= obstacle2.getX() + 5)||
-                (newHead.getX() <= obstacle2.getX()&& newHead.getX() >= obstacle2.getX() - 5)))
+        }
+        for (int i = m; i < n+m; i++)
+        {
+        if (newHead.getY() >= obstacle[i].getY()&& newHead.getY() <= obstacle[i].getY() + 150&&(
+                (newHead.getX() >= obstacle[i].getX()&& newHead.getX() <= obstacle[i].getX() + 5)||
+                (newHead.getX() <= obstacle[i].getX()&& newHead.getX() >= obstacle[i].getX() - 5)))
             return true;
+        }
         
-        if (newHead.getX() >= obstacle3.getX()&& newHead.getX() <= obstacle3.getX() + 150&&(
-                (newHead.getY() >= obstacle3.getY()&& newHead.getY() <= obstacle3.getY() + 5)||
-                (newHead.getY() <= obstacle3.getY()&& newHead.getY() >= obstacle3.getY() - 5)))
-            return true;
-        
-        if (newHead.getY() >= obstacle4.getY()&& newHead.getY() <= obstacle4.getY() + 150&&(
-                (newHead.getX() >= obstacle4.getX()&& newHead.getX() <= obstacle4.getX() + 5)||
-                (newHead.getX() <= obstacle4.getX()&& newHead.getX() >= obstacle4.getX() - 5)))
-            return true;
-        
-        if (newHead.getX() >= obstacle5.getX()&& newHead.getX() <= obstacle5.getX() + 150&&(
-                (newHead.getY() >= obstacle5.getY()&& newHead.getY() <= obstacle5.getY() + 5)||
-                (newHead.getY() <= obstacle5.getY()&& newHead.getY() >= obstacle5.getY() - 5)))
-            return true;
-
-        return false;
+    return false;
     }
-
     private void doesEatRegime() {
         if (isEnd)
             return;
@@ -472,7 +450,7 @@ stage4.setOnCloseRequest(event -> {
         }
     }
 
-    private void addFeed() {
+    private void addFeed(int n, int m) {
         if (isEnd)
             return;
 
@@ -496,91 +474,23 @@ stage4.setOnCloseRequest(event -> {
 
         isFeed = true;
         if(k==0)
-        {addObstacle();k=1;}
+        {addObstacle(n, m);k=1;}
     }
 
-    private void addObstacle() {
+    private void addObstacle(int n, int m) {
         if (isEnd)
             return;
 
         if (!isFeed)
             return;
 
-        List<Block> blockTemp = new ArrayList<>(blocks);
-
-        obstacle1X = Math.abs(random.nextInt()) % 400 + 10;
-        obstacle1Y = Math.abs(random.nextInt()) % 400 + 10;
-
-//        for (int i = 0; i < blockTemp.size(); i++)
-//            if (((blockTemp.get(i).getX() < obstacle1X + 150&& blockTemp.get(i).getY() < obstacle1Y + 150)||
-//		(blockTemp.get(i).getX() > obstacle1X + 150&& blockTemp.get(i).getY() > obstacle1Y + 150))&&
-//                    (feedRectangle.getX() < obstacle1X&& feedRectangle.getY() < obstacle1Y)||
-//					(feedRectangle.getX() + 20 > obstacle1X&& feedRectangle.getY() + 20 > obstacle1Y)) {
-//                obstacle1X = Math.abs(random.nextInt()) % 400 + 10;
-//                obstacle1Y = Math.abs(random.nextInt()) % 400 + 10;
-//            }
-
-        obstacle2X = Math.abs(random.nextInt()) % 400 + 10;
-        obstacle2Y = Math.abs(random.nextInt()) % 400 + 10;
-
-//        for (int i = 0; i < blockTemp.size(); i++)
-//            if (((blockTemp.get(i).getX() < obstacle2X + 150&& blockTemp.get(i).getY() < obstacle2Y + 150) ||
-//		(blockTemp.get(i).getX() > obstacle2X + 150&& blockTemp.get(i).getY() > obstacle2Y + 150)) &&
-//                    (feedRectangle.getX() < obstacle2X - 10&& feedRectangle.getY() < obstacle2Y)||
-//					(feedRectangle.getX() + 20 > obstacle2X&& feedRectangle.getY() + 20 > obstacle2Y)) {
-//                obstacle2X = Math.abs(random.nextInt()) % 400 + 10;
-//                obstacle2Y = Math.abs(random.nextInt()) % 400 + 10;
-//            }
-        
-        
-        obstacle3X = Math.abs(random.nextInt()) % 400 + 10;
-        obstacle3Y = Math.abs(random.nextInt()) % 400 + 10;
-
-//        for (int i = 0; i < blockTemp.size(); i++)
-//            if (((blockTemp.get(i).getX() < obstacle3X + 150&& blockTemp.get(i).getY() < obstacle3Y + 150)||
-//		(blockTemp.get(i).getX() > obstacle3X + 150&& blockTemp.get(i).getY() > obstacle3Y + 150))&&
-//                    (feedRectangle.getX() < obstacle3X&& feedRectangle.getY() < obstacle3Y)||
-//					(feedRectangle.getX() + 20 > obstacle3X&& feedRectangle.getY() + 20 > obstacle1Y)) {
-//                obstacle3X = Math.abs(random.nextInt()) % 400 + 10;
-//                obstacle3Y = Math.abs(random.nextInt()) % 400 + 10;
-//            }
-        
-        obstacle4X = Math.abs(random.nextInt()) % 400 + 10;
-        obstacle4Y = Math.abs(random.nextInt()) % 400 + 10;
-
-//        for (int i = 0; i < blockTemp.size(); i++)
-//            if (((blockTemp.get(i).getX() < obstacle4X + 150&& blockTemp.get(i).getY() < obstacle4Y + 150)||
-//		(blockTemp.get(i).getX() > obstacle4X + 150&& blockTemp.get(i).getY() > obstacle4Y + 150))&&
-//                    (feedRectangle.getX() < obstacle4X&& feedRectangle.getY() < obstacle4Y)||
-//					(feedRectangle.getX() + 20 > obstacle4X&& feedRectangle.getY() + 20 > obstacle1Y)) {
-//                obstacle4X = Math.abs(random.nextInt()) % 400 + 10;
-//                obstacle4Y = Math.abs(random.nextInt()) % 400 + 10;
-//            }
-        
-        obstacle5X = Math.abs(random.nextInt()) % 400 + 10;
-        obstacle5Y = Math.abs(random.nextInt()) % 400 + 10;
-
-//        for (int i = 0; i < blockTemp.size(); i++)
-//            if (((blockTemp.get(i).getX() < obstacle5X + 150&& blockTemp.get(i).getY() < obstacle5Y + 150)||
-//		(blockTemp.get(i).getX() > obstacle5X + 150&& blockTemp.get(i).getY() > obstacle5Y + 150))&&
-//                    (feedRectangle.getX() < obstacle5X&& feedRectangle.getY() < obstacle5Y)||
-//					(feedRectangle.getX() + 20 > obstacle5X&& feedRectangle.getY() + 20 > obstacle1Y)) {
-//                obstacle5X = Math.abs(random.nextInt()) % 400 + 10;
-//                obstacle5Y = Math.abs(random.nextInt()) % 400 + 10;
-//            }
-
-        obstacle1.setX(obstacle1X);
-        obstacle1.setY(obstacle1Y);
-        obstacle2.setX(obstacle2X);
-        obstacle2.setY(obstacle2Y);
-        obstacle3.setX(obstacle3X);
-        obstacle3.setY(obstacle3Y);
-        obstacle4.setX(obstacle4X);
-        obstacle4.setY(obstacle4Y);
-        obstacle5.setX(obstacle5X);
-        obstacle5.setY(obstacle5Y);
+	for (int i=0; i < n+m; i++){
+        	obstacle_X[i] = (Math.abs(random.nextInt()) % 40) * 10;
+        	obstacle_Y[i] = (Math.abs(random.nextInt()) % 40) * 10;
+        	obstacle[i].setX(obstacle_X[i]);
+        	obstacle[i].setY(obstacle_Y[i]);
+	}
     }
-
     private void setBoardListener() {
         scene.setOnKeyPressed(event -> {
             Thread thread = new Thread() {
